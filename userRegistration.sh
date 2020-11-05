@@ -46,7 +46,20 @@ else
 echo "Invalid mobile number"
 fi
 }
+
+function password(){
+read -p "Enter Password:" password
+pat="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#$%])(?=.*[a-zA-Z0-9@!#$]).{8,}$"
+if [[ $password =~ $pat ]]
+then
+echo "valid password"
+else
+echo "Invalid password"
+fi
+}
+
 validFirstName
 validLastName
 emailPattern
 mobNumberValidation
+password
