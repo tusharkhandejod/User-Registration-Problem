@@ -11,4 +11,17 @@ else
 echo "Invalid First Name"
 fi
 }
+
+function validLastName() {
+read -p "Enter the last name:" lastName
+patternForLastName="^[[:upper:]]{1}[[:lower:]]{2,}$"
+if [[ $lastName =~ $patternForLastName ]]
+then
+        echo "Valid Last Name"
+else
+        echo "Invalid Last Name"
+fi
+}
+
 validFirstName
+validLastName
