@@ -17,9 +17,9 @@ read -p "Enter the last name:" lastName
 patternForLastName="^[[:upper:]]{1}[[:lower:]]{2,}$"
 if [[ $lastName =~ $patternForLastName ]]
 then
-        echo "Valid Last Name"
+echo "Valid Last Name"
 else
-        echo "Invalid Last Name"
+echo "Invalid Last Name"
 fi
 }
 
@@ -29,11 +29,24 @@ pat="^(([A-Za-z0-9]+((\.|\-|\_|\+)?[A-Za-z0-9]?)*[A-Za-z0-9]+)|[A-Za-z0-9]+)@(([
 #all conditions true
 if [[ $emailid =~ $pat ]]
 then
-	echo "Valid Email Address"
+echo "Valid Email Address"
 else
-	echo "Invalid Email Address"
+echo "Invalid Email Address"
+fi
+}
+
+function mobNumberValidation(){
+read -p "Enter mobile number:" mobileNum
+country_code=91
+pat="^\+[0-9]{2}[ ][0-9]{10}$"
+if [[ $mobileNum =~ $pat ]]
+then
+echo "valid mobile number"
+else
+echo "Invalid mobile number"
 fi
 }
 validFirstName
 validLastName
 emailPattern
+mobNumberValidation
