@@ -1,4 +1,5 @@
 #!/bin/bash
+shopt -s extglob
 echo "Welcome to the User Registration program"
 
 function validFirstName() {
